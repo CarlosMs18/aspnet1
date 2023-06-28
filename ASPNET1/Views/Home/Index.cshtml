@@ -1,0 +1,18 @@
+﻿@*@model string*@
+@model Persona
+
+@*la diferencia entre el model de aca y el Model del html, el model en minuscula significa el tipo de dato que recibira la
+vista y el Model sirve para poder acceder al modelo*@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @*<h1 class="display-4">Soy @ViewBag.Nombre</h1>*@
+    <h1 class="display-4"> @Model.Nombre (@Model.Edad)  </h1>
+    <h2>Soy un desarrollador full stack especializado en tecnologias .NET y Javascript</h2>
+    <img 
+       id="foto"
+        src="~/imagenes/ER_Godfrey.jpeg" alt="Foto de GodFrey" />
+</div>
