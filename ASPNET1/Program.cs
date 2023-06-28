@@ -8,6 +8,14 @@ builder.Services.AddControllersWithViews();
 //INYECCION DE DEPENDENCIAS PROPIA , PRINCIPIO SOLID
 builder.Services.AddTransient<RepositorioProyectos>();
 
+//INYECCION DE DEENDENDICAS POR INTERFACES
+builder.Services.AddTransient<IRepositorioProyectos, RepositorioProyectos>();//esto significa  que cuando una clase como por ejemplo 
+                //home controller pida una instancia de IRepositorioProyecto(INTERFACE) se le enviara una sintancia del RepositorioProyectos(clase)
+                   //sin embargo als clases que piden eso no sabran eso
+builder.Services.AddTransient<ServicioTransitorio>();
+builder.Services.AddScoped<ServicioDelimitado>();
+builder.Services.AddSingleton<ServicioUnico>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
