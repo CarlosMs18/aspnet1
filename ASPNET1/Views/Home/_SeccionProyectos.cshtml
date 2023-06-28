@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Proyecto>
+@*@model HomeIndexViewModel *@
+@*COLORCAR ESTO LE ESTA QUITANDO FLEXIBILIDAD AL PROYECTO PORQUE LO LIMINTA PARA SU RETULIZACION ESTA LIGADO 
+                           DIRECTAMENTE AL HOME INDEX, POR ESO ES MEJOR COLCOARLE EL ENUMERABLE DEL PROYECTO QUE ES MAS GENERAL*@
+
+
+                            
+@*ANTES DE USAR EL ENUMERADO USADO SOLO EL MODELO  HomeIndexViewModel*@
+@*@if (Model.Proyectos is not null)
+{
+    <div class="text-center" style="padding-top : 6rem;">
+        <h1>Mis trabajos recientes</h1>
+        <p>Aqui puedes ver alguno de mis trabajos mas recientes</p>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var proyecto in Model.Proyectos)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        @*el h-100 es para que todos nuestras cards sea del mismo tamaño*@
+                  @*      <img src="@proyecto.ImagenUrl" class="card-img-top" alt="Imagen Proyecto">
+                        <div class="card-body">
+                            <h5 class="card-tittle">@proyecto.Titulo</h5>
+                            <p class="card-text">@proyecto.Descripcion</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-primary" href="@proyecto.Link" target="_blank"
+                               rel="noopener noreferrer">Visitar</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}*@
+
+     
+                            
+
+@if (Model is not null)  //ahora el model es el enumerable ya no tenemos que usar ,la nomenclatura del punto
+{
+    <div class="text-center" style="padding-top : 6rem;">
+        <h1>Mis trabajos recientes</h1>
+        <p>Aqui puedes ver alguno de mis trabajos mas recientes</p>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var proyecto in Model)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        @*el h-100 es para que todos nuestras cards sea del mismo tamaño*@
+                       <img src="@proyecto.ImagenUrl" class="card-img-top" alt="Imagen Proyecto">
+                        <div class="card-body">
+                            <h5 class="card-tittle">@proyecto.Titulo</h5>
+                            <p class="card-text">@proyecto.Descripcion</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-primary" href="@proyecto.Link" target="_blank"
+                               rel="noopener noreferrer">Visitar</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

@@ -1,7 +1,12 @@
+using ASPNET1.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//INYECCION DE DEPENDENCIAS PROPIA , PRINCIPIO SOLID
+builder.Services.AddTransient<RepositorioProyectos>();
 
 var app = builder.Build();
 

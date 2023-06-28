@@ -1,18 +1,28 @@
 ﻿@*@model string*@
-@model Persona
+@*@model Persona*@
+@model HomeIndexViewModel
+
 
 @*la diferencia entre el model de aca y el Model del html, el model en minuscula significa el tipo de dato que recibira la
 vista y el Model sirve para poder acceder al modelo*@
 
+@*@*PARA CAMBIAR DE HTML A CSHARP ES MEDIANTE EL MODIFICADOR @*@
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page";  //podemos tambiwen colocar bloques de funciones
+    string convertirEnMayusculas(string valor)
+    {
+        return valor.ToUpper() + "ZZZ";
+    }
+
+    DateTime hoy = DateTime.Now;
+    var nombres = new List<string>() { "Felipe", "Claudia", "Carlos" };
+
 }
 
-<div class="text-center">
-    @*<h1 class="display-4">Soy @ViewBag.Nombre</h1>*@
-    <h1 class="display-4"> @Model.Nombre (@Model.Edad)  </h1>
-    <h2>Soy un desarrollador full stack especializado en tecnologias .NET y Javascript</h2>
-    <img 
-       id="foto"
-        src="~/imagenes/ER_Godfrey.jpeg" alt="Foto de GodFrey" />
-</div>
+<partial name="_Presentacion" />
+
+<partial name="_Habilidades" />
+
+<partial name="_SeccionProyectos" model="Model.Proyectos" > @*//al usar el enumerador explicitamente tenemos que pasarle a la vista parcial el enumerador*@
+            @*IMPORTANTE RECORDAR QUE ESTO FUNCIONARA AUNQUE EL MODELO SEA NULO POR QUE SIMPLEMENTE NO HABRA PROYECTOS PARA MOSTRAR*@

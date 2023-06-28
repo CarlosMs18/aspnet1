@@ -1,0 +1,43 @@
+﻿
+<div class="text-center">
+
+    @* <ul>
+    @foreach(var nombre in nombres)
+    {
+    <li>@nombre</li>
+
+    }
+    </ul>*@
+    @*<h1 class="display-4">Soy @ViewBag.Nombre</h1>*@
+    <h1 class="display-4">  Soy @*@convertirEnMayusculas(@Model.Nombre) (@Model.Edad)*@ Carlos Melgarejo </h1>
+    @*<h4>@hoy.ToString()</h4>*@
+
+    @* @if(Model.Edad >= 18)
+    {
+    <h4>Eres mayor de edad , puedes pasar</h4>
+    }
+    else
+    {
+    <h4>Eres menor</h4>
+    }
+    *@
+    <h2>Soy un desarrollador full stack especializado en tecnologias .NET y Javascript</h2>
+    <img id="foto"
+         src="~/imagenes/ER_Godfrey.jpeg" alt="Foto de GodFrey" />
+
+</div>
+
+<div class="text-center">
+    <img id="imagen-dotnet" src="~/imagenes/dotnet-imagen-2.png" alt="dotnet logo" />
+</div>
+
+<div class="row justify-content-center text-center bg-primary">
+    <div class="col col-md-7 seccion-bienvenida">
+        <h1>Te doy la bienvenida a mi portafolio</h1>
+        <p>
+            He realizado desarrollo de software de manera profesional desde el 2021. He tenido el privilegio de trabajar para empresas
+            a nivel nacional y de manera freelance usando diferentes tecnologias en el backend y frontend.
+        </p>
+    </div>
+
+</div>
